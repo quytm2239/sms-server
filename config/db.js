@@ -22,8 +22,8 @@ var moment = require('moment');
   }
 });*/
 
-const sequelize = new Sequelize('d3req1cv408t06', 'lcrzlfpkqyuezy', '61aa25d46f82cb21ae2a737a79a3e4671e6ba623c46a7032e099d48eea311e30', {
-  host: 'ec2-23-21-220-48.compute-1.amazonaws.com',
+const sequelize = new Sequelize('dccstqroup2hta', 'ttijzszzdthibj', '950356533b1c64339b5250de38c0fed3e5ad177306517215e3fbbf969014c1ef', {
+  host: 'ec2-54-247-120-169.eu-west-1.compute.amazonaws.com',
   port: 5432,
   dialect: 'postgresql',
   logging: false,

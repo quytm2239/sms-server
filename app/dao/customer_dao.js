@@ -13,6 +13,6 @@ module.exports = {
     },
 
     addLocation: function(name, lat, lng, route) {
-        return db.sequelize.query('INSERT INTO customers (name, lat, lng, route, insert_datetime) VALUES(?, ?, ?, ?, now());', { raw: true, model: customer.customer, mapToModel: true, replacements: [name, lat, lng, route] });
+        return db.sequelize.query('INSERT INTO customers (name, lat, lng, route, insert_datetime, createAt, updatedAt) VALUES(?, ?, ?, ?, now(),now(),now());', { raw: true, model: customer.customer, mapToModel: true, replacements: [name, lat, lng, route] });
     }
 }

@@ -10,19 +10,19 @@ var db = require('../../config/db');
 var customer = db.sequelize.define('Customer', {
   name: {
     type: Sequelize.STRING,
-    field: 'NAME' // Will result in an attribute that is firstName when user facing but first_name in the database
+    field: 'name' // Will result in an attribute that is firstName when user facing but first_name in the database
   },
   lat: {
     type: Sequelize.DOUBLE,
-    field: 'LAT'
+    field: 'lat'
   },
   lng: {
     type: Sequelize.DOUBLE,
-    field: 'LNG'
+    field: 'lng'
   },
   id: {
     type: Sequelize.INTEGER,
-    field: 'ID',
+    field: 'id',
     primaryKey: true
   }
 }, {

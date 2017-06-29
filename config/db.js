@@ -41,12 +41,12 @@ module.exports = {
 
 //Create Item Table Structure
 var Customer = sequelize.define('customer', {
-    ID: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
-    NAME: Sequelize.STRING,
-    LAT: Sequelize.DOUBLE,
-    LNG: Sequelize.DOUBLE,
-    ROUTE: Sequelize.STRING,
-    INSERT_DATETIME: Sequelize.DATE
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
+    name: Sequelize.STRING,
+    lat: Sequelize.DOUBLE,
+    lng: Sequelize.DOUBLE,
+    route: Sequelize.STRING,
+    insert_datetime: Sequelize.DATE
 });
 
 // force: true will drop the table if it already exists
@@ -55,10 +55,10 @@ Customer.sync({force: false}).then(() => {
 
 //Create Item Table Structure
 var Operator = sequelize.define('operator', {
-    ID: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
-    LOGIN_ID: Sequelize.STRING,
-    PW: Sequelize.DOUBLE,
-    INSERT_DATETIME: Sequelize.DATE
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
+    login_id: Sequelize.STRING,
+    pw: Sequelize.DOUBLE,
+    insert_datetime: Sequelize.DATE
 });
 
 // force: true will drop the table if it already exists

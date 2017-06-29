@@ -9,6 +9,6 @@ var operator = require('../models/operator');
 
 module.exports = {
     searchByLoginId: function(loginId) {
-        return db.sequelize.query('SELECT * FROM operators where LOGIN_ID = ?', { raw: true, model: operator.operator, mapToModel: true, replacements: [loginId] });
+        return db.sequelize.query('SELECT * FROM operators where login_id = ?', { raw: true, model: operator.operator, mapToModel: true, replacements: [loginId] });
     }
 }

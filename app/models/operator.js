@@ -10,11 +10,11 @@ var db = require('../../config/db');
 var operator = db.sequelize.define('Operator', {
   loginId: {
     type: Sequelize.STRING,
-    field: 'LOGIN_ID'
+    field: 'login_id'
   },
   pw: {
     type: Sequelize.STRING,
-    field: 'PW'
+    field: 'pw'
   }
 }, {
     freezeTableName: true,

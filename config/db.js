@@ -50,7 +50,7 @@ var Customer = sequelize.define('customer', {
 });
 
 // force: true will drop the table if it already exists
-Customer.sync({force: true}).then(() => {
+Customer.sync({force: false}).then(() => {
 });
 
 //Create Item Table Structure

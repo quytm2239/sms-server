@@ -14,7 +14,7 @@ var cookieParser = require('cookie-parser');
 var operatorController = require('./app/controllers/operator_controller');
 
 // configuration ===========================================
-var client = redis.createClient(); // session store
+// var client = redis.createClient(); // session store
 // app.use(cookieParser());
 // app.use(session({
 //   secret: "thisismysecretkey",

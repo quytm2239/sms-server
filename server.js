@@ -59,6 +59,49 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 //     });
 //   }
 // ));
+app.use(express.static(__dirname + '/uploaded_image'));
+app.set('upload_dir',__dirname + '/uploaded_image');
+
+var baseImgUrl = 'https://sms4server.herokuapp.com/';
+
+app.post('/upload', function(req, res) {
+    // BUSBOY ============>>>>>>>>>>>>>
+    // load module
+    var path = require('path');
+    var Busboy = require('busboy');
+    var fs = require('fs');
+
+    var full_path = app.get('upload_dir');
+
+    var busboy = new Busboy({ headers: req.headers });
+    var saveTo = '';
+    var img_url = '';
+    var files = [];
+    var fstream;
+
+    busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+        //console.log('File [' + fieldname + ']: filename: ' + filename + ', encoding: ' + encoding + ', mimetype: ' + mimetype);
+        saveTo = path.join(full_path, path.basename(filename));
+        //console.log(saveTo);
+        var img_url = baseImgUrl + filename;
+        files.push(img_url);
+
+        fstream = fs.createWriteStream(saveTo);
+        file.pipe(fstream);
+        // fstream.on('close', function(){
+        // 	console.log('file ' + filename + ' uploaded');
+        // 	files.push(baseImgUrl + account_id + '/avatar/' + filename);
+        // });
+
+    });
+
+    busboy.on('finish', function() {
+        // update to database
+        res.status(200).send(files);
+    });
+    // PROCESS
+    req.pipe(busboy);
+});
 
 // routes ==================================================
 require('./app/routes')(app, __dirname, passport); // configure our routes

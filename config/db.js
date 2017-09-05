@@ -64,3 +64,16 @@ var Operator = sequelize.define('operator', {
 // force: true will drop the table if it already exists
 Operator.sync({force: false}).then(() => {
 });
+
+//Create Item Table Structure
+var LastLocation = sequelize.define('last_location', {
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
+    name: Sequelize.STRING,
+    lat: Sequelize.DOUBLE,
+    lng: Sequelize.DOUBLE,
+    insert_datetime: Sequelize.DATE
+});
+
+// force: true will drop the table if it already exists
+LastLocation.sync({force: false}).then(() => {
+});

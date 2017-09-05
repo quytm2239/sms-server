@@ -5,17 +5,19 @@
         "start": "node server.js"
     },
     "dependencies": {
-        "express": "~4.15.3",
-        "sequelize": "~3.30.4",
-        "mysql": "~2.13.0",
-        "path": "~0.12.7",
         "body-parser": "~1.17.2",
-        "express-session": "~1.15.3",
+        "busboy": "^0.2.14",
         "connect-redis": "~3.3.0",
+        "cookie-parser": "~1.4.3",
+        "express": "~4.15.3",
+        "express-session": "~1.15.3",
+        "fs": "0.0.1-security",
+        "moment": "~2.18.1",
+        "mysql": "~2.13.0",
         "passport": "~0.3.2",
         "passport-http": "~0.3.0",
-        "cookie-parser": "~1.4.3",
-        "moment": "~2.18.1",
-        "pg": "~6.4.0"
+        "path": "~0.12.7",
+        "pg": "~6.4.0",
+        "sequelize": "~3.30.4"
     }
 }
